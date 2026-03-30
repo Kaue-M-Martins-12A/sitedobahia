@@ -285,12 +285,34 @@ a {
 }
 
 .topbar-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: 2px;
     color: var(--bahia-white);
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topbar-logo {
+    height: 30px;
+    object-fit: contain;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.topbar-logo:hover {
+    transform: scale(1.1);
 }
 
 /* Screens */
@@ -773,6 +795,53 @@ a {
     animation: pulseRing 3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
 }
 
+/* Footer Global */
+.main-footer {
+    background: rgba(0, 10, 26, 0.95);
+    border-top: 3px solid var(--bahia-blue);
+    padding: 3rem 5%;
+    margin-top: 3rem;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    align-items: center;
+}
+
+.footer-section h4 {
+    color: var(--bahia-blue-light);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.footer-section p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-logo-main {
+    height: 45px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
+}
+
+.footer-logos-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-sponsor {
+    height: 40px;
+    object-fit: contain;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .grid-2-col {
@@ -804,5 +873,23 @@ a {
 
     .content-header h2 {
         font-size: 2rem;
+    }
+
+    .topbar-title {
+        display: none;
+    }
+
+    .topbar-logo {
+        height: 25px;
+    }
+
+    .footer-logos-right {
+        justify-content: center;
+    }
+
+    .footer-section.text-center {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem 0;
     }
 }
